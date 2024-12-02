@@ -100,7 +100,7 @@ systemctl start kubelet
 systemctl enable kubelet.service
 
 #install maven in the docker server
-sudo timedatectl set-timezone America/New_York
+cd /opt
 sudo apt update -y
 sudo apt install tree nano vim -y
 sudo apt install net-tools -y
