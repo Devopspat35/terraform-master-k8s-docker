@@ -104,7 +104,7 @@ cd /opt
 sudo apt update -y
 sudo apt install tree nano vim -y
 sudo apt install net-tools -y
-sudo apt install docker.io 
+sudo apt install docker.io -y
 sudo usermod -aG docker ubuntu
 sudo su - ubuntu
 sudo apt remove java* -y
