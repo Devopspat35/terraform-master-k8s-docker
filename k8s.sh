@@ -96,7 +96,6 @@ apt-mark hold kubelet kubeadm kubectl
 
 # Enable and start kubelet service
 
-
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
