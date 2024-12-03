@@ -1,10 +1,19 @@
 #!/bin/bash
-# common.sh
-# copy this script and run in all master and worker nodes
-#i1) Switch to root user [ sudo -i]
+#installs maven, npm, nodejs, in the docker server
+sudo hostnamectl set-hostname  docker
+sudo apt update -y
+sudo apt install docker.io -y
+sudo usermod -aG docker ubuntu
+sudo su - ubuntu
+sudo apt remove java* -y
+sudo apt install openjdk-11-jre -y
+sudo systemctl start docker
+sudo systemctl enable docker
+cd /opt
+sudo apt install tree nano net-tools  vim –y
+sudo apt install maven  nodejs   npm -y
 
-sudo hostnamectl set-hostname  master
-
+#install k8s-control plane or master-node
 sudo -i
 sudo timedatectl set-timezone America/New_York
 #2) Disable swap & add kernel settings
@@ -99,20 +108,4 @@ apt-mark hold kubelet kubeadm kubectl
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
-
-#or install maven npm and nodejs in the docker server mannually
-cd /opt
-sudo apt install maven  nodejs   npm -y
-sudo apt update -y
-sudo apt install tree nano vim -y
-sudo apt install net-tools -y
-sudo apt install docker.io -y 
-sudo usermod -aG docker ubuntu
-sudo su - ubuntu
-sudo apt remove java* -y
-sudo apt install openjdk-11-jre -y
-sudo systemctl start docker
-sudo systemctl enable docker
-
-
 
