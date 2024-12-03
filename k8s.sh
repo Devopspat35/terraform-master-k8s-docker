@@ -9,9 +9,6 @@ sudo apt remove java* -y
 sudo apt install openjdk-11-jre -y
 sudo systemctl start docker
 sudo systemctl enable docker
-cd /opt
-sudo apt install tree nano net-tools  vim –y
-sudo apt install maven  nodejs   npm -y
 
 #install k8s-control plane or master-node
 sudo -i
@@ -109,3 +106,6 @@ systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
 
+cd /opt
+sudo apt install tree nano net-tools  vim –y
+sudo apt install maven  nodejs   npm -y
