@@ -3,17 +3,7 @@
 # copy this script and run in all master and worker nodes
 #i1) Switch to root user [ sudo -i]
 
-sudo hostnamectl set-hostname  docker
-sudo apt update -y
-sudo apt install tree nano vim -y
-sudo apt install net-tools -y
-sudo apt install docker.io -y 
-sudo usermod -aG docker ubuntu
-sudo su - ubuntu
-sudo apt remove java* -y
-sudo apt install openjdk-11-jre -y
-sudo systemctl start docker
-sudo systemctl enable docker
+sudo hostnamectl set-hostname  master
 
 sudo -i
 sudo timedatectl set-timezone America/New_York
@@ -106,15 +96,24 @@ apt-mark hold kubelet kubeadm kubectl
 
 # Enable and start kubelet service
 
-#or install maven npm and nodejs in the docker server mannually
- cd /opt
- sudo apt install maven  nodejs   npm -y
 
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
 
-
+#or install maven npm and nodejs in the docker server mannually
+cd /opt
+sudo apt install maven  nodejs   npm -y
+sudo apt update -y
+sudo apt install tree nano vim -y
+sudo apt install net-tools -y
+sudo apt install docker.io -y 
+sudo usermod -aG docker ubuntu
+sudo su - ubuntu
+sudo apt remove java* -y
+sudo apt install openjdk-11-jre -y
+sudo systemctl start docker
+sudo systemctl enable docker
 
 
 
