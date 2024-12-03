@@ -1,6 +1,6 @@
 #!/bin/bash
 #installs maven, npm, nodejs, in the docker server
-sudo hostnamectl set-hostname  docker
+sudo hostnamectl set-hostname  master
 sudo apt update -y
 sudo apt install docker.io -y
 sudo usermod -aG docker ubuntu
