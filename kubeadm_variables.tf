@@ -41,7 +41,7 @@ variable "key" {
 
 variable "name" {
   type    = string
-  default = "docker-nodejs-mvn-npm"
+  default = "docker-nodejs-mvn-npm-k8s"
 }
 
 variable "namespace" {
